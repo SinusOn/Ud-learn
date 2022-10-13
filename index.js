@@ -1,0 +1,13 @@
+let numberOfFilm = prompt("Сколько фильмов вы уже посмотрели?");
+let personalMovieDB = {};
+personalMovieDB.count = numberOfFilm;
+personalMovieDB["movies"] = {};
+personalMovieDB["actors"] = {};
+personalMovieDB["genres"] = [];
+personalMovieDB["private"] = false;
+let lastFilm = prompt("Один из последних просмотренных фильмов?");
+let rating = prompt("На сколько оцените его?");
+let lastFilm2 = prompt("Один из последних просмотренных фильмов?");
+let rating2 = prompt("На сколько оцените его?");
+personalMovieDB.movies[lastFilm] = rating;
+personalMovieDB.movies[lastFilm2] = rating2;
