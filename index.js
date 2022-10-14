@@ -1,13 +1,26 @@
-let numberOfFilm = prompt("Сколько фильмов вы уже посмотрели?");
-let personalMovieDB = {};
-personalMovieDB.count = numberOfFilm;
+"use strict";
+let lastFilm,
+  numberOfFilm,
+  lastFilm2,
+  rating,
+  rating2,
+  personalMovieDB = {};
 personalMovieDB["movies"] = {};
 personalMovieDB["actors"] = {};
 personalMovieDB["genres"] = [];
 personalMovieDB["private"] = false;
-let lastFilm = prompt("Один из последних просмотренных фильмов?");
-let rating = prompt("На сколько оцените его?");
-let lastFilm2 = prompt("Один из последних просмотренных фильмов?");
-let rating2 = prompt("На сколько оцените его?");
-personalMovieDB.movies[lastFilm] = rating;
-personalMovieDB.movies[lastFilm2] = rating2;
+while (numberOfFilm == "" || numberOfFilm == null || numberOfFilm.length > 50) {
+  numberOfFilm = prompt("Сколько фильмов вы уже посмотрели?");
+}
+personalMovieDB.count = numberOfFilm;
+for (let i = 0; i < 2; i++) {
+  while (lastFilm == "" || lastFilm == null || lastFilm > 50) {
+    lastFilm = prompt("Фильм");
+  }
+  while (rating == "" || rating == null || rating > 50) {
+    rating = prompt("Оцените");
+  }
+  personalMovieDB.movies[lastFilm] = rating;
+  lastFilm = "";
+  rating = "";
+}
